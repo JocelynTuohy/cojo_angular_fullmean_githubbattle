@@ -1,0 +1,9 @@
+/deep/ img{
+  max-height: 150px;
+  max-width: 150px;
+}
+/deep/ #winner{
+  max-height: 200px;
+  max-width: 200px;
+  border: 2px solid green;
+}

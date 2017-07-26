@@ -1,0 +1,8 @@
+<img id="winner" src="{{(currentfighters|rank)[0].imageUrl}}">
+<div>
+  <h2>1st Place</h2>
+  <p>{{(currentfighters|rank)[0].username}} (Score: {{(currentfighters|rank)[0].score}})</p>
+  <h2>2nd Place</h2>
+  <p>{{(currentfighters|rank)[1].username}} (Score: {{(currentfighters|rank)[1].score}})</p>
+</div>
+<button (click)="resetBattle()">Reset</button>

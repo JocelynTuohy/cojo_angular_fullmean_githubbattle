@@ -1,0 +1,28 @@
+<!-- Player 1 -->
+<form #player1form='ngForm' (submit)="getPlayer(1)" *ngIf="!player1.imageUrl">
+  <h2>Player 1</h2>
+  <label for="player1field">GitHub Username:</label>
+  <input type="text" id="player1field" name="player1field" [(ngModel)]="player1.username" required>
+  <p *ngIf="player1error">GitHub username does not exist, ,try again.</p>
+  <button type="submit" [disabled]="!player1form.form.valid">Get User</button>
+</form>
+<div *ngIf="player1.imageUrl">
+  <img src="{{player1.imageUrl}}">
+  <p>{{player1.username}}</p>
+</div>
+
+<!-- Player 2 -->
+<form #player2form='ngForm' (submit)="getPlayer(2)" *ngIf="!player2.imageUrl">
+  <h2>Player 2</h2>
+  <label for="player2field">GitHub Username:</label>
+  <input type="text" id="player2field" name="player2field" [(ngModel)]="player2.username" required>
+  <p *ngIf="player2error">GitHub username does not exist, ,try again.</p>
+  <button type="submit" [disabled]="!player2form.form.valid">Get User</button>
+</form>
+<div *ngIf="player2.imageUrl">
+  <img src="{{player2.imageUrl}}">
+  <p>{{player2.username}}</p>
+</div>
+
+<!-- Start Battle -->
+<button *ngIf="player1.imageUrl && player2.imageUrl" (click)="battle()">BATTLE!</button>

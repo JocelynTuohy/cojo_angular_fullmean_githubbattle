@@ -1,0 +1,6 @@
+<h2>{{title}}</h2>
+<div *ngFor='let fighter of fighters|rank'>
+  <h2>{{fighters.indexOf(fighter)+1}}</h2>
+  <img src="{{fighter.imageUrl}}">
+  <h3>Score: {{fighter.score}}</h3>
+</div>
